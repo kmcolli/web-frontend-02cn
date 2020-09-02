@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web-frontend-02cn
+  name: web-frontend-02cn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-frontend-02cn
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: web-frontend-02cn
+    spec:
+      imagePullSecrets:
+        - name: all-icr-io
+      containers:
+      - image: us.icr.io/zero-to-cloud-native/web-frontend-02cn:v1
+        name: web-frontend-02cn
+        ports:
+          - containerPort: 8080
+        resources:
+            limits:
+              cpu: 50m
+              memory: 64Mi
+            requests:
+              cpu: 25m
+              memory: 32Mi
+status: {}

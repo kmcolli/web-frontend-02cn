@@ -1,0 +1,16 @@
+span{
+    color: white;
+}
+
+.center {
+    margin: 3% 0;
+}
+
+body{
+    font-family: ;
+}
+
+@font-face{
+    font-family: Oxygen-Bold;
+    src: url(assets/Oxygen-Bold.ttf);
+}

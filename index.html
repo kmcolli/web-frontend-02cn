@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Zero To Cloud Native</title>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar sticky-top navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <span class="navbar-bard mb-1 h4">Zero To Cloud Native</span>
+                </div>
+            </nav>
+        </div>
+        <div class="center">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="clusternameopv">Cluster Name</label>
+                            <input type="text" class="form-control" id="clusternameopv" placeholder="Name of the ROKS cluster">
+                        </div>
+                        <div class="form-group">
+                            <label for="ibmcloudapikeyopv">IBM Cloud API KEY</label>
+                            <input type="text" class="form-control" id="ibmcloudapikeyopv" placeholder="IBM Cloud API KEY">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="getOpenshiftVersion()">GET OPENSHIFT VERSION</button>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <br>
+                            <textarea class="form-control" id="openshiftversion" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="clusternameopt">Cluster Name</label>
+                            <input type="email" class="form-control" id="clusternameopt" placeholder="Name of the ROKS cluster">
+                        </div>
+                        <div class="form-group">
+                            <label for="ibmcloudapikeyopt">IBM Cloud API KEY</label>
+                            <input type="email" class="form-control" id="ibmcloudapikeyopt" placeholder="IBM Cloud API KEY">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="getOpenshiftToken()">GET OPENSHIFT TOKEN</button>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <br>
+                            <textarea class="form-control" id="openshifttoken" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="clusternamessh">Email address</label>
+                            <input type="email" class="form-control" id="clusternamessh" placeholder="Name of the ROKS cluster">
+                        </div>
+                        <div class="form-group">
+                            <label for="ibmcloudapikeyssh">Email address</label>
+                            <input type="email" class="form-control" id="ibmcloudapikeyssh" placeholder="IBM Cloud API KEY">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="enableSSH()">ENABLE SSH ON YOUR OPENSHIFT WORKER NODES</button>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <br>
+                            <textarea class="form-control" id="enablessh" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

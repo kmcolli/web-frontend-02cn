@@ -18,10 +18,10 @@ spec:
       imagePullSecrets:
         - name: all-icr-io
       containers:
-      - image: us.icr.io/zero-to-cloud-native/web-frontend-02cn:v1
+      - image: us.icr.io/zero-to-cloud-native/web-frontend-02cn:v2
         name: web-frontend-02cn
         ports:
-          - containerPort: 8080
+          - containerPort: 80
         resources:
             limits:
               cpu: 50m

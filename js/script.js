@@ -1,51 +1,38 @@
 function getOpenshiftVersion(){
-    var cluster_name = document.getElementById("clusternameopv").value;
-    var api_key = document.getElementById("ibmcloudapikeyopv").value;
-    console.log(cluster_name);
-    console.log(api_key);
-    var payload = {
-        "apikey":cluster_name,
-        "cluster_name":api_key
-    }
-    var xhr = new XMLHttpRequest(); 
-    xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/getOCPVersions/");
-    xhr.send(JSON.stringify(payload));
+    var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        console.log(this.responseText);
-    }
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            document.getElementById("openshiftversion").innerHTML = myObj.Versions[0] + "\n" + myObj.Versions[1] + "\n" + myObj.Versions[2]
+        }
+    };
+    xhr.open("GET", "http://api.zero-to-cloud-native.com:8000/api/v1/getOCPVersions/", true);
+    xhr.send();
 }
 
 function getOpenshiftToken(){
-    var cluster_name = document.getElementById("clusternameopt").value;
-    var api_key = document.getElementById("ibmcloudapikeyopt").value;
-    console.log(cluster_name);
-    console.log(api_key);
-    var payload = {
-        "apikey":cluster_name,
-        "cluster_name":api_key
-    }
+    var data = JSON.stringify({"apikey":"oczA9V8wyMWiOf_76F8_A_TVd6geW_wSs3HeKNH9d7gw","cluster_name":"zero-to-cloud-native"});
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/getOCPToken/")
-    xhr.send(JSON.stringify(payload));
-    xhr.onreadystatechange = function() {
-        console.log(this.responseText);
-    }
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function() {
+        if(this.readyState === 4) {
+            console.log(this.responseText);
+        }
+    });
+    xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/getOCPToken/");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
 }
 
 function enableSSH(){
     var cluster_name = document.getElementById("clusternamessh").value;
     var api_key = document.getElementById("ibmcloudapikeyssh").value;
-    console.log(cluster_name);
-    console.log(api_key);
     var payload = {
         "apikey":cluster_name,
         "cluster_name":api_key
     }
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/enableSSH/")
+    xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/enableSSH/", true)
     xhr.send(JSON.stringify(payload));
-    xhr.onreadystatechange = function() {
-        console.log(this.responseText);
-    }
     
 }

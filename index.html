@@ -20,15 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
-                            <label for="clusternameopv">Cluster Name</label>
-                            <input type="text" class="form-control" id="clusternameopv" placeholder="Name of the ROKS cluster">
-                        </div>
-                        <div class="form-group">
-                            <label for="ibmcloudapikeyopv">IBM Cloud API KEY</label>
-                            <input type="text" class="form-control" id="ibmcloudapikeyopv" placeholder="IBM Cloud API KEY">
-                        </div>
-                        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="getOpenshiftVersion()">GET OPENSHIFT VERSION</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-block center-button" onclick="getOpenshiftVersion()">GET OPENSHIFT VERSION</button>
                     </div>
                     <div class="col">
                         <div class="form-group">
@@ -58,7 +50,7 @@
                     <div class="col">
                         <div class="form-group">
                             <br>
-                            <textarea class="form-control" id="openshifttoken" rows="5"></textarea>
+                            <textarea class="form-control text-box-margin" id="openshifttoken" rows="5"></textarea>
                         </div>
                     </div>
                 </div>
@@ -71,11 +63,11 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="clusternamessh">Email address</label>
+                            <label for="clusternamessh">Cluster Name</label>
                             <input type="email" class="form-control" id="clusternamessh" placeholder="Name of the ROKS cluster">
                         </div>
                         <div class="form-group">
-                            <label for="ibmcloudapikeyssh">Email address</label>
+                            <label for="ibmcloudapikeyssh">IBM Cloud API KEY</label>
                             <input type="email" class="form-control" id="ibmcloudapikeyssh" placeholder="IBM Cloud API KEY">
                         </div>
                         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="enableSSH()">ENABLE SSH ON YOUR OPENSHIFT WORKER NODES</button>
@@ -83,12 +75,14 @@
                     <div class="col">
                         <div class="form-group">
                             <br>
-                            <textarea class="form-control" id="enablessh" rows="5"></textarea>
+                            <textarea class="form-control text-box-margin" id="enablessh" rows="5"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

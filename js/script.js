@@ -3,7 +3,7 @@ function getOpenshiftVersion(){
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            document.getElementById("openshiftversion").innerHTML = "Status: " + myObj.Status + "\n\n" + mymyObj.Versions[0] + "\n" + myObj.Versions[1] + "\n" + myObj.Versions[2];
+            document.getElementById("openshiftversion").innerHTML = "Status: " + myObj.Status + "\n\n" + myObj.Versions[0] + "\n" + myObj.Versions[1] + "\n" + myObj.Versions[2];
         }
     };
     xhr.open("GET", "http://api.zero-to-cloud-native.com:8000/api/v1/getOCPVersions/", true);
@@ -21,8 +21,8 @@ function getOpenshiftToken(){
         alert("Please enter a valid IBM Cloud API Key");
     }else{
         var payload = {
-            "apikey":cluster_name,
-            "cluster_name":api_key
+            "apikey":api_key,
+            "cluster_name":cluster_name
         }
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/getOCPToken/");
@@ -49,8 +49,8 @@ function enableSSH(){
         alert("Please enter a valid IBM Cloud API Key");
     }else{
         var payload = {
-            "apikey":cluster_name,
-            "cluster_name":api_key
+            "apikey":api_key,
+            "cluster_name":cluster_name
         }
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "http://api.zero-to-cloud-native.com:8000/api/v1/enableSSH/");

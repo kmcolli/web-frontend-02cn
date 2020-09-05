@@ -6,6 +6,14 @@ span{
     margin: 3% 0;
 }
 
+.center-button{
+    margin-top: 12%;
+}
+
+.text-box-margin{
+    margin: 1%;
+}
+
 @font-face{
     font-family: Oxygen-Bold;
     src: url(assets/Oxygen-Bold.ttf);

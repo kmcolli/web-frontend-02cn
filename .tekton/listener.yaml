@@ -71,7 +71,7 @@ metadata:
 spec:
   params:
     - name: repository
-      value: "https://github.com/open-toolchain/hello-tekton"
+      value: "https://github.com/kmcolli/web-frontend-02cn"
     - name: revision
       value: "master"
 ---

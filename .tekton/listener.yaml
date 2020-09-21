@@ -71,9 +71,9 @@ metadata:
 spec:
   params:
     - name: repository
-      value: "https://github.com/kmcolli/web-frontend-02cn"
+      value: "https://github.com/sudoalgorithm/web-frontend-02cn"
     - name: revision
-      value: "master"
+      value: "dev"
 ---
 apiVersion: tekton.dev/v1beta1
 kind: EventListener

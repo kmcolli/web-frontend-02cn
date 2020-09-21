@@ -221,7 +221,7 @@ spec:
         - name: HOME
           value: "/root"
         - name: DEPLOYMENT_FILE
-          value: $(params.deployment-file)
+          value: deployments/$(params.deployment-file)
         - name: CLUSTER_NAMESPACE
           value: $(params.clusterNamespace)
         - name: PIPELINE_KUBERNETES_CLUSTER_NAME

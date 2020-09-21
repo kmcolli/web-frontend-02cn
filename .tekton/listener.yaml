@@ -73,7 +73,7 @@ spec:
     - name: repository
       value: $(params.repository)
     - name: revision
-      value: (params.revision)
+      value: $(params.revision)
 ---
 apiVersion: tekton.dev/v1beta1
 kind: EventListener

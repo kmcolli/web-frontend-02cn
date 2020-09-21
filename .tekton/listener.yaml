@@ -71,9 +71,9 @@ metadata:
 spec:
   params:
     - name: repository
-      value: "https://github.com/sudoalgorithm/web-frontend-02cn"
+      value: $(params.repository)
     - name: revision
-      value: "dev"
+      value: (params.revision)
 ---
 apiVersion: tekton.dev/v1beta1
 kind: EventListener

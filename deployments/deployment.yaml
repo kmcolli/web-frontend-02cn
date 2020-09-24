@@ -19,8 +19,8 @@ spec:
       imagePullSecrets:
         - name: all-icr-io
       containers:
-      - image: %s
-        name: web-frontend-02cn
+      - image: name: web-frontend-02cn
+        image: us.icr.io
         ports:
           - containerPort: 80
         resources:

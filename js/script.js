@@ -64,3 +64,6 @@ function enableSSH(){
         xhr.send(JSON.stringify(payload));
     }
 }
+
+
+

@@ -3,7 +3,7 @@ function getOpenshiftVersion(){
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            document.getElementById("openshiftversion").innerHTML = "Status: " + myObj.Status + "\n\n" + myObj.Versions[0] + "\n" + myObj.Versions[1] + "\n" + myObj.Versions[2];
+            document.getElementById("openshiftversion").innerHTML = "Status: " + myObj.Status + "\n\n" + myObj.versions.Versions[0] + "\n" + myObj.versions.Versions[1] + "\n" + myObj.versions.Versions[2];
         }
     };
     xhr.open("GET", "https://api.zero-to-cloud-native.com:8000/api/v1/getOCPVersions/", true);
